@@ -1,0 +1,153 @@
+.FFFFF..                                                                 [100%]
+================================== FAILURES ===================================
+_______ test_primary_navigation_links[/login-\u09b2\u0997 \u0987\u09a8] _______
+
+relative_url = '/login', visible_text = '\u09b2\u0997 \u0987\u09a8'
+page = <Page url='https://aidfastbd.com/'>
+
+    @pytest.mark.parametrize(
+        "relative_url, visible_text",
+        [
+            ("/login", "\u09b2\u0997 \u0987\u09a8"),
+            ("/doctor", "\u09a1\u09be\u0995\u09cd\u09a4\u09be\u09b0"),
+            ("/diagnostic", "\u09a1\u09be\u09af\u09bc\u09be\u0997\u09a8\u09b8\u09cd\u099f\u09bf\u0995"),
+            ("/blood", "\u09ac\u09cd\u09b2\u09be\u09a1 \u09ac\u09cd\u09af\u09be\u0982\u0995"),
+            ("/ambulance", "\u0985\u09cd\u09af\u09be\u09ae\u09cd\u09ac\u09c1\u09b2\u09c7\u09a8\u09cd\u09b8"),
+        ],
+    )
+    def test_primary_navigation_links(relative_url, visible_text, page):
+        page.goto(BASE_URL, wait_until="networkidle")
+        locator = page.locator(f'a[href="{relative_url}"]')
+        assert locator.first.is_visible(), f"Expected link to {relative_url} to be visible"
+        locator.first.click()
+        page.wait_for_load_state("networkidle")
+>       assert page.url.endswith(relative_url), f"Expected navigation to {relative_url}, got {page.url}"
+E       AssertionError: Expected navigation to /login, got https://aidfastbd.com/
+E       assert False
+E        +  where False = <built-in method endswith of str object at 0x000001ECA5EB8940>('/login')
+E        +    where <built-in method endswith of str object at 0x000001ECA5EB8940> = 'https://aidfastbd.com/'.endswith
+E        +      where 'https://aidfastbd.com/' = <Page url='https://aidfastbd.com/'>.url
+
+tests\test_aidfast_homepage.py:29: AssertionError
+_ test_primary_navigation_links[/doctor-\u09a1\u09be\u0995\u09cd\u09a4\u09be\u09b0] _
+
+relative_url = '/doctor', visible_text = '\u09a1\u09be\u0995\u09cd\u09a4\u09be\u09b0'
+page = <Page url='https://aidfastbd.com/'>
+
+    @pytest.mark.parametrize(
+        "relative_url, visible_text",
+        [
+            ("/login", "\u09b2\u0997 \u0987\u09a8"),
+            ("/doctor", "\u09a1\u09be\u0995\u09cd\u09a4\u09be\u09b0"),
+            ("/diagnostic", "\u09a1\u09be\u09af\u09bc\u09be\u0997\u09a8\u09b8\u09cd\u099f\u09bf\u0995"),
+            ("/blood", "\u09ac\u09cd\u09b2\u09be\u09a1 \u09ac\u09cd\u09af\u09be\u0982\u0995"),
+            ("/ambulance", "\u0985\u09cd\u09af\u09be\u09ae\u09cd\u09ac\u09c1\u09b2\u09c7\u09a8\u09cd\u09b8"),
+        ],
+    )
+    def test_primary_navigation_links(relative_url, visible_text, page):
+        page.goto(BASE_URL, wait_until="networkidle")
+        locator = page.locator(f'a[href="{relative_url}"]')
+        assert locator.first.is_visible(), f"Expected link to {relative_url} to be visible"
+        locator.first.click()
+        page.wait_for_load_state("networkidle")
+>       assert page.url.endswith(relative_url), f"Expected navigation to {relative_url}, got {page.url}"
+E       AssertionError: Expected navigation to /doctor, got https://aidfastbd.com/
+E       assert False
+E        +  where False = <built-in method endswith of str object at 0x000001ECA5ED5430>('/doctor')
+E        +    where <built-in method endswith of str object at 0x000001ECA5ED5430> = 'https://aidfastbd.com/'.endswith
+E        +      where 'https://aidfastbd.com/' = <Page url='https://aidfastbd.com/'>.url
+
+tests\test_aidfast_homepage.py:29: AssertionError
+_ test_primary_navigation_links[/diagnostic-\u09a1\u09be\u09af\u09bc\u09be\u0997\u09a8\u09b8\u09cd\u099f\u09bf\u0995] _
+
+relative_url = '/diagnostic', visible_text = '\u09a1\u09be\u09af\u09bc\u09be\u0997\u09a8\u09b8\u09cd\u099f\u09bf\u0995'
+page = <Page url='https://aidfastbd.com/'>
+
+    @pytest.mark.parametrize(
+        "relative_url, visible_text",
+        [
+            ("/login", "\u09b2\u0997 \u0987\u09a8"),
+            ("/doctor", "\u09a1\u09be\u0995\u09cd\u09a4\u09be\u09b0"),
+            ("/diagnostic", "\u09a1\u09be\u09af\u09bc\u09be\u0997\u09a8\u09b8\u09cd\u099f\u09bf\u0995"),
+            ("/blood", "\u09ac\u09cd\u09b2\u09be\u09a1 \u09ac\u09cd\u09af\u09be\u0982\u0995"),
+            ("/ambulance", "\u0985\u09cd\u09af\u09be\u09ae\u09cd\u09ac\u09c1\u09b2\u09c7\u09a8\u09cd\u09b8"),
+        ],
+    )
+    def test_primary_navigation_links(relative_url, visible_text, page):
+        page.goto(BASE_URL, wait_until="networkidle")
+        locator = page.locator(f'a[href="{relative_url}"]')
+        assert locator.first.is_visible(), f"Expected link to {relative_url} to be visible"
+        locator.first.click()
+        page.wait_for_load_state("networkidle")
+>       assert page.url.endswith(relative_url), f"Expected navigation to {relative_url}, got {page.url}"
+E       AssertionError: Expected navigation to /diagnostic, got https://aidfastbd.com/
+E       assert False
+E        +  where False = <built-in method endswith of str object at 0x000001ECA5ED7F50>('/diagnostic')
+E        +    where <built-in method endswith of str object at 0x000001ECA5ED7F50> = 'https://aidfastbd.com/'.endswith
+E        +      where 'https://aidfastbd.com/' = <Page url='https://aidfastbd.com/'>.url
+
+tests\test_aidfast_homepage.py:29: AssertionError
+_ test_primary_navigation_links[/blood-\u09ac\u09cd\u09b2\u09be\u09a1 \u09ac\u09cd\u09af\u09be\u0982\u0995] _
+
+relative_url = '/blood', visible_text = '\u09ac\u09cd\u09b2\u09be\u09a1 \u09ac\u09cd\u09af\u09be\u0982\u0995'
+page = <Page url='https://aidfastbd.com/'>
+
+    @pytest.mark.parametrize(
+        "relative_url, visible_text",
+        [
+            ("/login", "\u09b2\u0997 \u0987\u09a8"),
+            ("/doctor", "\u09a1\u09be\u0995\u09cd\u09a4\u09be\u09b0"),
+            ("/diagnostic", "\u09a1\u09be\u09af\u09bc\u09be\u0997\u09a8\u09b8\u09cd\u099f\u09bf\u0995"),
+            ("/blood", "\u09ac\u09cd\u09b2\u09be\u09a1 \u09ac\u09cd\u09af\u09be\u0982\u0995"),
+            ("/ambulance", "\u0985\u09cd\u09af\u09be\u09ae\u09cd\u09ac\u09c1\u09b2\u09c7\u09a8\u09cd\u09b8"),
+        ],
+    )
+    def test_primary_navigation_links(relative_url, visible_text, page):
+        page.goto(BASE_URL, wait_until="networkidle")
+        locator = page.locator(f'a[href="{relative_url}"]')
+        assert locator.first.is_visible(), f"Expected link to {relative_url} to be visible"
+        locator.first.click()
+        page.wait_for_load_state("networkidle")
+>       assert page.url.endswith(relative_url), f"Expected navigation to {relative_url}, got {page.url}"
+E       AssertionError: Expected navigation to /blood, got https://aidfastbd.com/
+E       assert False
+E        +  where False = <built-in method endswith of str object at 0x000001ECA5E88620>('/blood')
+E        +    where <built-in method endswith of str object at 0x000001ECA5E88620> = 'https://aidfastbd.com/'.endswith
+E        +      where 'https://aidfastbd.com/' = <Page url='https://aidfastbd.com/'>.url
+
+tests\test_aidfast_homepage.py:29: AssertionError
+_ test_primary_navigation_links[/ambulance-\u0985\u09cd\u09af\u09be\u09ae\u09cd\u09ac\u09c1\u09b2\u09c7\u09a8\u09cd\u09b8] _
+
+relative_url = '/ambulance', visible_text = '\u0985\u09cd\u09af\u09be\u09ae\u09cd\u09ac\u09c1\u09b2\u09c7\u09a8\u09cd\u09b8'
+page = <Page url='https://aidfastbd.com/'>
+
+    @pytest.mark.parametrize(
+        "relative_url, visible_text",
+        [
+            ("/login", "\u09b2\u0997 \u0987\u09a8"),
+            ("/doctor", "\u09a1\u09be\u0995\u09cd\u09a4\u09be\u09b0"),
+            ("/diagnostic", "\u09a1\u09be\u09af\u09bc\u09be\u0997\u09a8\u09b8\u09cd\u099f\u09bf\u0995"),
+            ("/blood", "\u09ac\u09cd\u09b2\u09be\u09a1 \u09ac\u09cd\u09af\u09be\u0982\u0995"),
+            ("/ambulance", "\u0985\u09cd\u09af\u09be\u09ae\u09cd\u09ac\u09c1\u09b2\u09c7\u09a8\u09cd\u09b8"),
+        ],
+    )
+    def test_primary_navigation_links(relative_url, visible_text, page):
+        page.goto(BASE_URL, wait_until="networkidle")
+        locator = page.locator(f'a[href="{relative_url}"]')
+        assert locator.first.is_visible(), f"Expected link to {relative_url} to be visible"
+        locator.first.click()
+        page.wait_for_load_state("networkidle")
+>       assert page.url.endswith(relative_url), f"Expected navigation to {relative_url}, got {page.url}"
+E       AssertionError: Expected navigation to /ambulance, got https://aidfastbd.com/
+E       assert False
+E        +  where False = <built-in method endswith of str object at 0x000001ECA5EBAA10>('/ambulance')
+E        +    where <built-in method endswith of str object at 0x000001ECA5EBAA10> = 'https://aidfastbd.com/'.endswith
+E        +      where 'https://aidfastbd.com/' = <Page url='https://aidfastbd.com/'>.url
+
+tests\test_aidfast_homepage.py:29: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_aidfast_homepage.py::test_primary_navigation_links[/login-\u09b2\u0997 \u0987\u09a8]
+FAILED tests/test_aidfast_homepage.py::test_primary_navigation_links[/doctor-\u09a1\u09be\u0995\u09cd\u09a4\u09be\u09b0]
+FAILED tests/test_aidfast_homepage.py::test_primary_navigation_links[/diagnostic-\u09a1\u09be\u09af\u09bc\u09be\u0997\u09a8\u09b8\u09cd\u099f\u09bf\u0995]
+FAILED tests/test_aidfast_homepage.py::test_primary_navigation_links[/blood-\u09ac\u09cd\u09b2\u09be\u09a1 \u09ac\u09cd\u09af\u09be\u0982\u0995]
+FAILED tests/test_aidfast_homepage.py::test_primary_navigation_links[/ambulance-\u0985\u09cd\u09af\u09be\u09ae\u09cd\u09ac\u09c1\u09b2\u09c7\u09a8\u09cd\u09b8]
